@@ -22,7 +22,8 @@ def get_similar_frame_ranges(frame_folder, threshold):
     # This function analyzes frames and identifies ranges of similar frames based on a threshold.
     # It returns a list of tuples, each representing a range of similar frames.
     start_frame = 0
-    total_frames = 100  # Assume total_frames is determined earlier in the code
+    frame_files = sorted(os.listdir(frame_folder))  
+    total_frames = len(frame_files)
     frame_ranges = []
 
     folder_name = os.path.basename(frame_folder)
@@ -41,7 +42,7 @@ def get_similar_frame_ranges(frame_folder, threshold):
 
     return frame_ranges
 
-def process_frame_folder(frame_folder):
+def process_frame_folder(frame_folder, base_root_folder):
     threshold = 0
     frame_ranges = get_similar_frame_ranges(frame_folder, threshold)
 
@@ -50,9 +51,8 @@ def process_frame_folder(frame_folder):
 
     print(filtered_frame_ranges)
 
-    # Ensure the output directory exists in the root folder
-    root_folder = os.path.dirname(os.path.abspath(__file__))
-    output_dir = os.path.join(root_folder, "output")
+    # Ensure the output directory exists in the specified base root folder
+    output_dir = os.path.join(base_root_folder, "output")
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 

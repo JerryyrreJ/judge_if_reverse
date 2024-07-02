@@ -13,7 +13,7 @@ def main():
     frame_folders = [os.path.join(root_folder, name) for name in os.listdir(root_folder) if os.path.isdir(os.path.join(root_folder, name))]
 
     for frame_folder in frame_folders:
-        judge_if_reverse_hash.process_frame_folder(frame_folder)
+        judge_if_reverse_hash.process_frame_folder(frame_folder, root_folder)
 
 if __name__ == "__main__":
     main()
