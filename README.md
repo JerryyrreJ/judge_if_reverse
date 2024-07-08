@@ -25,9 +25,9 @@ This project is designed to judge which parts of a video can be reversed by calc
 ### Installation
 
 1. Clone the repository to your local machine:
-    '''bash
-    git clone https://github.com/JerryyrreJ/judge_if_reverse.git
-    '''
+   ```bash
+   git clone https://github.com/JerryyrreJ/judge_if_reverse.git
+   ```
 ## About the project
 1. When prompted, enter the path to the root folder containing your video files.
 2. The script will process each video in the root folder, extract frames, and analyze them according to the defined criteria in `judge_if_reverse_hash`.
